@@ -1,23 +1,23 @@
 language: node_js
 node_js:
-- "10.15.1"
+  - "10.15.1"
 dist: trusty
 sudo: false
 branches:
 only:
-- master
+  - master
 cache:
 directories:
-- node_modules
+  - node_modules
 install:
-- npm install -g yarn
+  - npm install -g yarn
 script:
-- npm run-script test
-- npm run-script build
+  - npm run-script test
+  - npm run-script build
 deploy:
 provider: pages
 skip_cleanup: true
 github_token: $GITHUB_TOKEN
 local_dir: dist
 on:
-branch: master
+  branch: master
